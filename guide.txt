@@ -1,0 +1,35 @@
+NEON ANSI - Live Device Telemetry Edition
+
+Install:
+  python -m pip install -r requirements.txt
+
+Run:
+  python neon_ansi.py
+
+Examples:
+  python neon_ansi.py --scene dash
+  python neon_ansi.py --scene auto
+  python neon_ansi.py --source mic
+  python neon_ansi.py --source cpu
+  python neon_ansi.py --source net
+
+Controls:
+  1-8  switch scenes
+  0    auto scene rotation
+  t    theme
+  +/-  sensitivity
+  [ ]  animation speed
+  g    glitch
+  m    data source
+  q/Esc quit
+
+Scene 8 is a live telemetry dashboard. It reads CPU, per-core CPU,
+RAM, disk usage/I/O, network activity and totals, process count,
+interfaces, uptime, CPU frequency, battery/charging status and
+temperature when the operating system exposes those sensors.
+Microphone analysis uses sounddevice when available.
+
+Notes:
+- Hardware temperature is shown as N/A when the OS does not expose it.
+- No telemetry values are fabricated.
+- On Linux/macOS, microphone permissions may be required by the OS.
